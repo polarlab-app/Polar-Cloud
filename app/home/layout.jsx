@@ -1,9 +1,9 @@
 import { ThemeProvider } from 'next-themes';
+import '@/src/css/core/themes.css';
 
 export default function HomeLayout({ children }) {
     return (
         <ThemeProvider
-            attribute='class'
             defaultTheme='dark'
             themes={[
                 'dark',

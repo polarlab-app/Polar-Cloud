@@ -1,7 +1,13 @@
+'use server';
+
 import { NextResponse } from 'next/server';
+import { cookies } from 'next/headers';
 
 export function middleware(request) {
-    console.log('Middleware ran');
+    const cookie = cookies().get('cloudToken');
+    if (!cookie) {
+        console.log('nokokie');
+    }
 
     return NextResponse.next();
 }
