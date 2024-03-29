@@ -1,0 +1,28 @@
+:root {
+    --background-primary: rgb(15, 15, 20);
+    --background-secondary: rgb(22, 21, 28);
+    --background-accent: rgb(89, 89, 255, 0.1);
+    --text-primary: white;
+    --text-secondary: #91909c;
+    --border-primary: #505050;
+    --border-secondary: #343434;
+    --border-accent: rgb(89, 89, 255);
+}
+
+[data-theme='dark'] {
+    --background-primary: rgb(15, 15, 20);
+    --background-secondary: rgb(22, 21, 28);
+    --text-primary: white;
+    --text-accent: #91909c;
+    --border-primary: #505050;
+    --border-secondary: #343434;
+}
+
+[data-theme='light'] {
+    --background-primary: rgb(240, 240, 240);
+    --background-secondary: rgb(255, 255, 255);
+    --text-primary: rgb(17, 17, 17);
+    --text-accent: #000000;
+    --border-primary: #505050;
+    --border-secondary: #343434;
+}

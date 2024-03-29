@@ -13,4 +13,5 @@ body {
     -webkit-font-smoothing: antialiased;
     font-size: 14px;
     scroll-behavior: smooth;
+    color: white;
 }
