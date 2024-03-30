@@ -1,4 +1,5 @@
 import '@/src/css/core/global.css';
+import '@css/core/themes.css';
 
 export const metadata = {
     title: 'Polar Cloud | Home',
