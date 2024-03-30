@@ -1,0 +1,57 @@
+.files {
+    height: 85%;
+    width: 95%;
+    background-color: var(--background-secondary);
+    position: absolute;
+    bottom: 0;
+    border: 1px solid var(--border-secondary);
+    border-radius: 20px 20px 0 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.file,
+.folder {
+    border-bottom: 1px solid var(--border-secondary);
+    height: 12%;
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+    height: 60%;
+    width: auto;
+    margin: 0 2%;
+}
+
+.itemtext {
+    height: 90%;
+    margin: 1% 0 0 0;
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+}
+
+.filename {
+    text-align: left;
+    padding: 0;
+    margin: 0;
+}
+
+.metadata {
+    margin: 0;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.meta {
+    border: 1px solid var(--border-primary);
+    padding: 6px;
+    font-size: 0.7rem;
+    border-radius: 7px;
+    margin-right: 6%;
+    color: var(--text-secondary);
+}

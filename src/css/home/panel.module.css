@@ -1,0 +1,31 @@
+.panel {
+    display: flex;
+    flex-direction: column;
+}
+
+.selector {
+    background-color: var(--background-accent);
+    border-radius: 12px;
+    position: relative;
+}
+
+.selector:hover .options {
+    display: block;
+}
+
+.options {
+    text-align: left;
+    list-style: none;
+    position: absolute;
+    display: none;
+    width: 15%;
+    z-index: 220;
+    background-color: var(--background-secondary);
+    border: 1px solid var(--border-secondary);
+    border-radius: 12px;
+}
+
+.option {
+    display: flex;
+    height: 5vh;
+}

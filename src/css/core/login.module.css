@@ -100,4 +100,7 @@
     border: 1px solid var(--error-border);
     background-color: var(--error-background);
     width: 70%;
+    padding: 12px;
+    border-radius: 12px;
+    font-weight: 600;
 }

@@ -2,10 +2,16 @@ import styles from '@css/core/login.module.css';
 import Image from 'next/image';
 import LoginForm from '@components/loginForm.jsx';
 import { cookies } from 'next/headers';
+import { redirect } from 'next/dist/server/api-utils';
+
+export const metadata = {
+    title: 'Polar Cloud | Login',
+    description: 'Polar Cloud Login Page',
+};
 
 export default function Page() {
     if (cookies().get('cloudToken')) {
-        window.location.assign('/home');
+        redirect('/home');
     }
 
     return (
