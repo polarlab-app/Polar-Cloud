@@ -7,6 +7,11 @@
     --border-primary: #505050;
     --border-secondary: #343434;
     --border-accent: rgb(89, 89, 255);
+    --input-primary: rgb(35, 35, 35);
+    --hover-background-accent: rgb(89, 89, 255, 0.2);
+    --error-text: rgba(255, 85, 96);
+    --error-background: rgba(255, 85, 96, 0.35);
+    --error-border: hsl(356.49, 98.95%, 62.75%, 0.2);
 }
 
 [data-theme='dark'] {
