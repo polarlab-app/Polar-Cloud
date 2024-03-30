@@ -5,10 +5,10 @@ import { cookies } from 'next/headers';
 
 export function middleware(request) {
     const cookie = cookies().get('cloudToken');
-    if (!cookie) {
-        console.log('nokokie');
-    }
 
+    if (!cookie) {
+        return NextResponse.redirect(new URL('/', request.nextUrl.origin).toString());
+    }
     return NextResponse.next();
 }
 

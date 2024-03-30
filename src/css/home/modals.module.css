@@ -1,0 +1,23 @@
+.modal {
+}
+
+.button {
+    background-color: var(--background-accent);
+    border: 1px solid var(--border-accent);
+    width: 75%;
+    height: 12%;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--border-accent);
+    text-align: center;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 600ms ease;
+    margin-bottom: 5%;
+}
+
+.button:hover {
+    scale: 1.03;
+    transition: all 600ms ease;
+    background-color: var(--hover-background-accent);
+}

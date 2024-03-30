@@ -1,0 +1,5 @@
+body {
+    display: flex;
+    overflow: hidden;
+    margin: 0;
+}

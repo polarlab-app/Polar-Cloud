@@ -4,7 +4,8 @@
             "@/*": ["./*"],
             "@css/*": ["./src/css/*"],
             "@schemas/*": ["./src/schemas/*"],
-            "@components/*": ["./components/*"]
+            "@components/*": ["./components/*"],
+            "@lib/*": ["./lib/*"]
         }
     }
 }
