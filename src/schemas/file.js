@@ -1,9 +1,9 @@
 import { Schema, model, models } from 'mongoose';
 let fileSchema = new Schema({
-    username: String,
-    password: String,
-    role: String,
-    token: String,
+    path: String,
+    name: String,
+    extension: String,
+    dateCreated: String,
 });
 
 if (!models.file) {

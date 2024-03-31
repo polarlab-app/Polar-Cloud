@@ -18,7 +18,7 @@ export default function ControlPanel() {
                             <p className={styles.optiontext}>Upload Folder</p>
                         </li>
                         <li className={styles.option}>
-                            <p className={styles.optiontext}>Create File</p>
+                            <p className={styles.optiontext}>Upload File</p>
                         </li>
                     </ul>
                 </p>
