@@ -32,7 +32,7 @@ export default function Files() {
                         <div className={styles.file} key={item.name}>
                             <Image
                                 alt='test'
-                                src='https://cdn.polarlab.app/src/icons/mono/mono_file-word.png'
+                                src='https://cdn.polarlab.app/src/icons/mono/mono_folder.png'
                                 width='512'
                                 height='512'
                                 className={styles.icon}
