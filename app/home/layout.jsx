@@ -24,9 +24,8 @@ export default function HomeLayout({ children }) {
             ]}>
             <DataProvider>
                 <SideNav />
+                <div className={styles.main}>{children}</div>
             </DataProvider>
-
-            <div className={styles.main}>{children}</div>
         </ThemeProvider>
     );
 }

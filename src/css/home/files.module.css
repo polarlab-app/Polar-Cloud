@@ -11,6 +11,7 @@
     margin: 0 auto;
     display: flex;
     flex-direction: column;
+    border-bottom: 0;
 }
 
 .file,
@@ -19,6 +20,7 @@
     height: 12%;
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 
 .icon {
@@ -40,8 +42,15 @@
     padding: 0;
     margin: 0;
 }
+.file:hover .itemtext .metadata,
+.folder:hover .itemtext .metadata {
+    opacity: 1;
+    transition: all 600ms ease;
+}
 
 .metadata {
+    transition: all 600ms ease;
+    opacity: 0;
     margin: 0;
     display: flex;
     justify-content: flex-start;

@@ -1,17 +1,15 @@
 'use client';
-
-import path from 'path';
 import styles from '@css/home/files.module.css';
 
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
 import getFiles from '@lib/getFiles';
 import { useData } from '@/app/home/context';
 
 export default function Files() {
     const { dir, setDir } = useData();
-    const [path, setPath] = useState('/personal');
+    console.log(dir);
+    const [path, setPath] = useState('/common');
     const [directoryStructure, setDirectoryStructure] = useState([]);
 
     useEffect(() => {
@@ -29,7 +27,7 @@ export default function Files() {
             {directoryStructure.map((item) => {
                 if (item.isDirectory) {
                     return (
-                        <div className={styles.file} key={item.name}>
+                        <div className={styles.folder} key={item.name}>
                             <Image
                                 alt='test'
                                 src='https://cdn.polarlab.app/src/icons/mono/mono_folder.png'

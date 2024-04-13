@@ -2,8 +2,7 @@ import styles from '@css/core/login.module.css';
 import Image from 'next/image';
 import LoginForm from '@components/loginForm.jsx';
 import { cookies } from 'next/headers';
-import { redirect } from 'next/dist/server/api-utils';
-
+import { redirect } from 'next/navigation';
 export const metadata = {
     title: 'Polar Cloud | Login',
     description: 'Polar Cloud Login Page',
