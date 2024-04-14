@@ -16,8 +16,8 @@
 .options {
     text-align: left;
     list-style: none;
+    display: none;
     position: absolute;
-
     width: 15%;
     z-index: 220;
     background-color: var(--background-secondary);
