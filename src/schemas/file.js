@@ -6,6 +6,7 @@ let fileSchema = new Schema({
     extension: String,
     size: String,
     dateCreated: String,
+    dateModified: String,
 });
 
 if (!models.file) {

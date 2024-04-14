@@ -13,7 +13,7 @@ export default function ControlPanel() {
     const [fileExtension, setFileExtension] = useState('');
 
     const handleCreateFolder = async () => {
-        await createFolder('/common', 'manual');
+        await createFolder(dir, folderName);
         alert(`Folder ${folderName} created successfully.`);
     };
 
