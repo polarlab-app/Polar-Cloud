@@ -1,7 +1,7 @@
 {
     "images": {},
     "extensions": {
-        ".js": "JS",
+        ".js": "JavaScript",
         ".png": "PNG Image",
         ".jpeg": "JPEG Image",
         ".jpg": "JPEG Image"
