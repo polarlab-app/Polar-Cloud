@@ -1,4 +1,9 @@
 {
     "images": {},
-    "extensions": {}
+    "extensions": {
+        ".js": "JS",
+        ".png": "PNG Image",
+        ".jpeg": "JPEG Image",
+        ".jpg": "JPEG Image"
+    }
 }
