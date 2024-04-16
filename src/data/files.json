@@ -4,6 +4,30 @@
         ".js": "JS",
         ".png": "PNG Image",
         ".jpeg": "JPEG Image",
-        ".jpg": "JPEG Image"
+        ".jpg": "JPEG Image",
+        ".py": "Python",
+        ".exe": "Application",
+        ".bat": "Batch",
+        ".mp4": "MP4 Video",
+        ".avi": "AVI Video",
+        ".mp3": "Sound",
+        ".flac": "Sound",
+        ".wav": "Sound",
+        ".wave": "Sound",
+        ".txt": "Text File",
+        ".doc": "Document File",
+        ".docx": "Document File",
+        ".ogg": "Sound",
+        ".msi": "Windows Setup File",
+        ".pdf": "Document File",
+        ".ico": "ICO Image",
+        ".pptx": "Presentation File",
+        ".zip": "ZIP Archive",
+        ".rar": "RAR Archive",
+        ".7z": "7Z Archive",
+        ".ini": "Configuration File",
+        ".jar": "Java Executable",
+        ".conf": "Config File"
+
     }
 }
