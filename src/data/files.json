@@ -14,20 +14,19 @@
         ".flac": "Sound",
         ".wav": "Sound",
         ".wave": "Sound",
-        ".txt": "Text File",
-        ".doc": "Document File",
-        ".docx": "Document File",
+        ".txt": "Text",
+        ".doc": "Document",
+        ".docx": "Document",
         ".ogg": "Sound",
-        ".msi": "Windows Setup File",
-        ".pdf": "Document File",
+        ".msi": "Windows Setup",
+        ".pdf": "Document",
         ".ico": "ICO Image",
-        ".pptx": "Presentation File",
+        ".pptx": "Presentation",
         ".zip": "ZIP Archive",
         ".rar": "RAR Archive",
         ".7z": "7Z Archive",
-        ".ini": "Configuration File",
+        ".ini": "Configuration",
         ".jar": "Java Executable",
-        ".conf": "Config File"
-
+        ".conf": "Config"
     }
 }
