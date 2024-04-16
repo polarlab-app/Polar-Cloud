@@ -8,20 +8,6 @@ import { useData } from '@/app/home/context';
 export default function ControlPanel() {
     const { dir, setDir } = useData();
 
-    const [folderName, setFolderName] = useState('');
-    const [fileName, setFileName] = useState('');
-    const [fileExtension, setFileExtension] = useState('');
-
-    const handleCreateFolder = async () => {
-        await createFolder(dir, folderName);
-        alert(`Folder ${folderName} created successfully.`);
-    };
-
-    const handleCreateFile = async () => {
-        await createFile(fileName, fileExtension, dir);
-        alert(`File ${fileName}.${fileExtension} created successfully.`);
-    };
-
     return (
         <div className={styles.panel}>
             <h2 className={styles.directory}>Testing My Ass</h2>

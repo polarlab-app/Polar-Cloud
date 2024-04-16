@@ -1,6 +1,6 @@
 'use client';
 import styles from '@css/home/files.module.css';
-import { extensions, images } from '@data/files.json';
+import fileData from '@data/files.json';
 
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
@@ -9,11 +9,11 @@ import { useData } from '@/app/home/context';
 
 export default function Files() {
     const { dir, setDir } = useData();
-    console.log(dir);
     const [directoryStructure, setDirectoryStructure] = useState([]);
     const [showContextMenu, setShowContextMenu] = useState(false);
     const [contextMenuPosition, setContextMenuPosition] = useState({ x: 0, y: 0 });
     const [activeItem, setActiveItem] = useState(null);
+    const [modal, setModal] = useState(null);
 
     useEffect(() => {
         const fetchDirectoryStructure = async () => {
@@ -29,15 +29,6 @@ export default function Files() {
 
         fetchDirectoryStructure();
     }, [dir]);
-    /*useEffect(() => {
-        if (activeItem) {
-            const selectedItem = directoryStructure.find((item) => item.name === activeItem);
-            if (selectedItem && selectedItem.isDirectory) {
-                setDir(`${dir}/${activeItem}`);
-                setActiveItem(null);
-            }
-        }
-    }, [activeItem, directoryStructure, dir]);*/
 
     const handleRightClick = (e, item) => {
         e.preventDefault();
@@ -47,8 +38,8 @@ export default function Files() {
     };
 
     const handleLeftClick = (e, item) => {
-        e.stopPropagation();
         e.preventDefault();
+        e.stopPropagation();
         setShowContextMenu(false);
         if (activeItem == item.name && directoryStructure.find((item) => item.name === activeItem).isDirectory) {
             setDir(`${dir}/${activeItem}`);
@@ -76,54 +67,59 @@ export default function Files() {
     const isSubdirectory = dir.split('/').length > 2;
 
     return (
-        <div className={styles.files} onContextMenu={(e) => e.preventDefault()} onClick={() => handleLeftClick()}>
-            {isSubdirectory && (
-                <div
-                    className={`${styles.folder} ${styles.parentDirectory}`}
-                    key='parent-dir:D'
-                    onClick={() => setDir(dir.substring(0, dir.lastIndexOf('/') + 1).slice(0, -1))}>
-                    <Image
-                        alt='Parent Directory'
-                        src='https://cdn.polarlab.app/src/icons/mono/mono_folder.png'
-                        width='512'
-                        height='512'
-                        className={styles.icon}
-                    />
-                    <div className={styles.itemtext}>
-                        <h3 className={styles.filename}>Parent Directory</h3>
-                    </div>
-                </div>
-            )}
-            {directoryStructure.map((item) => {
-                const Component = item.isDirectory ? 'folder' : 'file';
-                const iconSrc = item.isDirectory
-                    ? 'https://cdn.polarlab.app/src/icons/mono/mono_folder.png'
-                    : 'https://cdn.polarlab.app/src/icons/mono/mono_file-word.png';
-                const itemParts = item.name.split('.');
-                const isActive = activeItem === item.name;
-                const displayName = item.isDirectory ? item.name : itemParts.slice(0, -1).join('.');
-                const extension = item.isDirectory ? '' : `.${itemParts.slice(-1)}`;
-                return (
+        <>
+            {modal ? modal : null}
+            <div className={styles.files} onContextMenu={(e) => e.preventDefault()} onClick={() => handleLeftClick()}>
+                {isSubdirectory && (
                     <div
-                        className={`${styles[Component]} ${isActive ? styles.activefile : ''}`}
-                        key={item.name}
-                        onContextMenu={(e) => handleRightClick(e, item)}
-                        onClick={(e) => handleLeftClick(e, item)}>
-                        <Image alt='File Icon' src={iconSrc} width='512' height='512' className={styles.icon} />
+                        className={`${styles.folder} ${styles.parentDirectory}`}
+                        key='parent-dir:D'
+                        onClick={() => setDir(dir.substring(0, dir.lastIndexOf('/') + 1).slice(0, -1))}>
+                        <Image
+                            alt='Parent Directory'
+                            src='https://cdn.polarlab.app/src/icons/mono/mono_folder.png'
+                            width='512'
+                            height='512'
+                            className={styles.icon}
+                        />
                         <div className={styles.itemtext}>
-                            <h3 className={styles.filename}>
-                                {displayName}
-                                <span className={styles.extension}>{extension}</span>
-                            </h3>
-                            <div className={styles.metadata}>
-                                <p className={styles.meta}>9.5 KB</p>
-                                <p className={styles.meta}>{item.isDirectory ? 'Directory' : 'JS File'}</p>
-                            </div>
+                            <h3 className={styles.filename}>Parent Directory</h3>
                         </div>
                     </div>
-                );
-            })}
-            {renderContextMenu()}
-        </div>
+                )}
+                {directoryStructure.map((item) => {
+                    const Component = item.isDirectory ? 'folder' : 'file';
+                    const itemParts = item.name.split('.');
+                    const isActive = activeItem === item.name;
+                    const displayName = item.isDirectory ? item.name : itemParts.slice(0, -1).join('.');
+                    const extension = item.isDirectory ? '' : `.${itemParts.slice(-1)}`;
+                    const iconSrc = item.isDirectory
+                        ? 'https://cdn.polarlab.app/src/icons/mono/mono_folder.png'
+                        : fileData.images[extension];
+                    return (
+                        <div
+                            className={`${styles[Component]} ${isActive ? styles.activefile : ''}`}
+                            key={item.name}
+                            onContextMenu={(e) => handleRightClick(e, item)}
+                            onClick={(e) => handleLeftClick(e, item)}>
+                            <Image alt='File Icon' src={iconSrc} width='512' height='512' className={styles.icon} />
+                            <div className={styles.itemtext}>
+                                <h3 className={styles.filename}>
+                                    {displayName}
+                                    <span className={styles.extension}>{extension}</span>
+                                </h3>
+                                <div className={styles.metadata}>
+                                    <p className={styles.meta}>9.5 KB</p>
+                                    <p className={styles.meta}>
+                                        {item.isDirectory ? 'Directory' : `${fileData.extensions[extension]} File`}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    );
+                })}
+                {renderContextMenu()}
+            </div>
+        </>
     );
 }
