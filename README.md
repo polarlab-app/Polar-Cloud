@@ -11,6 +11,6 @@ Polar Cloud is still in development. Release date is yet to be announced.
 Have questions, feedback, or need support? 
 **Reach out to us!** You can contact our team on following places:
 - [Discord server](https://discord.com/invite/2t6JBJQy7c)
-- Email 
+- [Email](mailto:support@polarlab.app)
 
 We value your input and are committed to helping you make the most out of our project.
