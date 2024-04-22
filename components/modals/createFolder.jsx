@@ -7,7 +7,6 @@ export default function CreateFolder(props) {
     const [folderName, setFolderName] = useState('');
 
     async function submitFolder() {
-        e.preventDefault();
         await createFolder(props.dir, folderName);
     }
 

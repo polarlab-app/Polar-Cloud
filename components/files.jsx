@@ -31,15 +31,12 @@ export default function Files() {
     }, [dir]);
 
     const handleRightClick = (e, item) => {
-        e.preventDefault();
         setShowContextMenu(true);
         setContextMenuPosition({ x: e.clientX, y: e.clientY });
         setActiveItem(item.name);
     };
 
     const handleLeftClick = (e, item) => {
-        e.preventDefault();
-        e.stopPropagation();
         setShowContextMenu(false);
         if (activeItem == item.name && directoryStructure.find((item) => item.name === activeItem).isDirectory) {
             setDir(`${dir}/${activeItem}`);
@@ -83,7 +80,7 @@ export default function Files() {
                             className={styles.icon}
                         />
                         <div className={styles.itemtext}>
-                            <h3 className={styles.filename}>Parent Directory</h3>
+                            <h3 className={styles.filename}>... Parent Directory</h3>
                         </div>
                     </div>
                 )}

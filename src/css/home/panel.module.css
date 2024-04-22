@@ -19,6 +19,10 @@
     justify-self: flex-start;
 }
 
+.dropdown {
+    position: absolute;
+}
+
 .dropdown:hover .options {
     display: block;
 }
@@ -35,6 +39,7 @@
     border-radius: 12px;
     padding: 0;
     margin-left: 0;
+    display: block;
 }
 
 .option {

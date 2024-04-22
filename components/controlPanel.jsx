@@ -8,6 +8,7 @@ import { useData } from '@/app/home/context';
 export default function ControlPanel() {
     const { dir, setDir } = useData();
     const [modal, setModal] = useState(null);
+    console.log(dir);
 
     return (
         <>
@@ -17,10 +18,10 @@ export default function ControlPanel() {
                 <div className={styles.dropdown}>
                     <div className={styles.selector}>New</div>
                     <ul className={styles.options}>
-                        <li className={styles.option} onClick={() => setModal(<CreateFolder />)}>
+                        <li className={styles.option} onClick={() => setModal(<CreateFolder dir={dir} />)}>
                             <p className={styles.optiontext}>Create Folder</p>
                         </li>
-                        <li className={styles.option} onClick={() => setModal(<CreateFile />)}>
+                        <li className={styles.option} onClick={() => setModal(<CreateFile dir={dir} />)}>
                             <p className={styles.optiontext}>Create File</p>
                         </li>
                         <li className={styles.option}>

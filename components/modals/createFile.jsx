@@ -7,7 +7,6 @@ export default function CreateFile(props) {
     const [fileName, setFileName] = useState('');
 
     async function submitFile() {
-        e.preventDefault();
         await createFile(props.dir, fileName);
     }
 
