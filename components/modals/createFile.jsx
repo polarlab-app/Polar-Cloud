@@ -3,12 +3,12 @@ import { useState } from 'react';
 import createFile from '@/lib/files/createFile';
 import styles from '@css/home/modals.module.css';
 
-export default function CreateFile(dir) {
+export default function CreateFile(props) {
     const [fileName, setFileName] = useState('');
 
     async function submitFile() {
         e.preventDefault();
-        await createFile(dir, fileName);
+        await createFile(props.dir, fileName);
     }
 
     return (

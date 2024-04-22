@@ -11,26 +11,25 @@ export default function ControlPanel() {
 
     return (
         <>
+            {modal ? modal : null}
             <div className={styles.panel}>
                 <h2 className={styles.directory}>{dir}</h2>
                 <div className={styles.dropdown}>
-                    <div className={styles.selector}>
-                        New
-                        <ul className={styles.options}>
-                            <li className={styles.option} onClick={() => setModal(<CreateFolder />)}>
-                                <p className={styles.optiontext}>Create Folder</p>
-                            </li>
-                            <li className={styles.option} onClick={() => setModal(<CreateFile />)}>
-                                <p className={styles.optiontext}>Create File</p>
-                            </li>
-                            <li className={styles.option}>
-                                <p className={styles.optiontext}>Upload Folder</p>
-                            </li>
-                            <li className={styles.option}>
-                                <p className={styles.optiontext}>Upload File</p>
-                            </li>
-                        </ul>
-                    </div>
+                    <div className={styles.selector}>New</div>
+                    <ul className={styles.options}>
+                        <li className={styles.option} onClick={() => setModal(<CreateFolder />)}>
+                            <p className={styles.optiontext}>Create Folder</p>
+                        </li>
+                        <li className={styles.option} onClick={() => setModal(<CreateFile />)}>
+                            <p className={styles.optiontext}>Create File</p>
+                        </li>
+                        <li className={styles.option}>
+                            <p className={styles.optiontext}>Upload Folder</p>
+                        </li>
+                        <li className={styles.option}>
+                            <p className={styles.optiontext}>Upload File</p>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </>

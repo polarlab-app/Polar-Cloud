@@ -11,12 +11,15 @@
 .selector {
     background-color: var(--background-accent);
     border: 1px solid var(--border-accent);
+    color: var(--border-accent);
     width: 5%;
     border-radius: 12px;
     position: relative;
+    display: inline-block;
+    justify-self: flex-start;
 }
 
-.selector:hover .options {
+.dropdown:hover .options {
     display: block;
 }
 
@@ -25,14 +28,19 @@
     list-style: none;
     display: none;
     position: absolute;
-    width: 15%;
+    width: max-content;
     z-index: 220;
     background-color: var(--background-secondary);
     border: 1px solid var(--border-secondary);
     border-radius: 12px;
+    padding: 0;
+    margin-left: 0;
 }
 
 .option {
+    padding: 0;
+    margin-left: 0;
+    color: var(--text-primary);
     display: flex;
     height: 5vh;
 }

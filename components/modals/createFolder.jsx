@@ -3,12 +3,12 @@ import { useState } from 'react';
 import createFolder from '@/lib/files/createFolder';
 import styles from '@css/home/modals.module.css';
 
-export default function CreateFolder(dir) {
+export default function CreateFolder(props) {
     const [folderName, setFolderName] = useState('');
 
     async function submitFolder() {
         e.preventDefault();
-        await createFolder(dir, folderName);
+        await createFolder(props.dir, folderName);
     }
 
     return (
